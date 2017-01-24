@@ -1,0 +1,60 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.i2s.ie.build.commonmaven</groupId>
+		<artifactId>JAR</artifactId>
+		<version>7.2.0-SNAPSHOT</version>
+	</parent>
+	
+	<groupId>com.i2s.samples</groupId>
+	<artifactId>jTeste</artifactId>
+	<version>${com.i2s.LIFE.build.version}</version>
+	<packaging>jar</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.i2s.foundation</groupId>
+			<artifactId>i2s-foundation-web</artifactId>
+			<version>${com.i2s.ARC.build.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-api</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!-- EXTERNAL DEPENDENCIES - Compile -->
+		<dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+        </dependency>
+
+		<!-- EXTERNAL DEPENDENCIES - Test -->
+        <dependency>
+			<groupId>com.sun.faces</groupId>
+			<artifactId>jsf-api</artifactId>
+			<scope>test</scope>
+		</dependency>
+        <dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<scope>test</scope>
+		</dependency>
+        <dependency>
+        	<groupId>org.dbunit</groupId>
+        	<artifactId>dbunit</artifactId>
+        </dependency>
+
+	  <dependency>
+	    <groupId>log4j</groupId>
+	    <artifactId>log4j</artifactId>
+	    <version>1.2.17</version>
+	  </dependency>
+	  <dependency>
+	    <groupId>com.logentries</groupId>
+	    <artifactId>logentries-appender</artifactId>
+	    <version>RELEASE</version>
+	  </dependency>
+	</dependencies>
+</project>
