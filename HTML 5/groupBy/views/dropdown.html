@@ -1,0 +1,12 @@
+<div ng-form name="fieldForm"
+	ng-class="{ 'has-error': fieldForm.dropDownFieldName.$invalid}"
+	class="form-group">
+	<label for="dropDownFieldName" class="control-label">{{field.field_title}}:</label>
+		<select ng-model="field.field_value" ng-required="field.field_required" ng-disabled="field.field_disabled" name="dropDownFieldName" id="dropDownFieldName" class="form-control">
+			<option ng-repeat="option in field.field_options" 
+					ng-selected="option.option_value == field.field_value"
+					value="{{option.option_id}}">
+				{{option.option_title}}
+			</option>
+        </select>
+</div>

@@ -1,0 +1,9 @@
+<div ng-form name="fieldForm"
+	ng-class="{ 'has-error': fieldForm.dateFieldName.$invalid}"
+	class="form-group">
+	<label for="currencyFieldName" class="control-label">{{field.field_title}}:</label>
+		<input type="text" ng-model="field.field_value" name="dateFieldName"
+			id="dateFieldName" data-date-format="dd/MM/yyyy" bs-datepicker
+			ng-required="field.field_required" ng-disabled="field.field_disabled"
+			class="form-control" />
+</div>

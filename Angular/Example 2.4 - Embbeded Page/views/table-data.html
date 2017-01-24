@@ -1,0 +1,18 @@
+<!-- table-data.html -->
+
+<h2>Users summary</h2>
+
+<table class="table table-hover table-striped table-bordered">
+    <thead>
+        <tr>
+            <td>Username</td>
+            <td>Description</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="user in usersList">
+            <td>{{ user.USERNAME }}</td>
+            <td>{{ user.DESCRICAO }}</td>
+        </tr>
+    </tbody>
+</table>

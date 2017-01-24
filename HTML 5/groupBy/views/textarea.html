@@ -1,0 +1,10 @@
+<div ng-form name="fieldForm"
+	ng-class="{ 'has-error': fieldForm.fieldName.$invalid}"
+	class="form-group">
+	<label for="fieldName" class="control-label">{{field.field_title}}:</label>
+		<textarea type="text" name="areaFieldName" id="areaFieldName"
+			ng-model="field.field_value" value="{{field.field_value}}"
+			ng-required="field.field_required" ng-disabled="field.field_disabled"
+			class="form-control" ui-mask="{{field.field_masc}}"
+			ui-mask-placeholder ui-mask-placeholder-char="_" />
+</div>

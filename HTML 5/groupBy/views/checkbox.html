@@ -1,0 +1,9 @@
+<div ng-form name="fieldForm"
+	ng-class="{ 'has-error': fieldForm.fieldName.$invalid}"
+	class="form-group">
+	<label for="fieldName" class="control-label">{{field.field_title}}:</label>
+		<input type="checkbox" name="checkFieldName" id="checkFieldName"
+			ng-true-value="1" ng-false-value="0" ng-model="field.field_value"
+			ng-required="field.field_required" ng-disabled="field.field_disabled"
+			class="form-control" />
+</div>

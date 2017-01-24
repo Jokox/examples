@@ -1,0 +1,7 @@
+<div ng-form name="fieldForm"
+	ng-class="{ 'has-error': fieldForm.radioFieldName.$invalid}"
+	class="form-group">
+	<label for="fieldName" class="control-label">{{field.field_title}}:</label>
+		<input type="radio" value="{{option.option_value}}" name="radioFieldName" id="radioFieldName"
+			class="form-control" />
+</div>

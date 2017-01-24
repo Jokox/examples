@@ -1,0 +1,1 @@
+http://bootsnipp.com/snippets/featured/simple-admin

@@ -1,0 +1,31 @@
+<!-- views/partial-login.html -->
+<div class="modal-header">
+	<h3 class="modal-title">Login screen in modal window</h3>
+</div>
+<div class="modal-body">
+  <form name="loginForm" ng-submit="LoginModalCtrl.submit(_username, _password)" novalidate> <!-- novalidate disables default browser validation -->
+	<div ng-class="{ 'has-error': loginForm.username.$invalid && loginForm.username.$dirty }" class="form-group">
+		<label for="_name" class="control-label">Name:</label> 
+		<div class="input-group"> 
+			<span class="input-group-addon">
+				<span class="glyphicon glyphicon-user"></span>
+			</span>
+			<input type="text" name="username" id="_username" ng-model="_username" tabindex="1" class="form-control" placeholder="Enter username" value="" required>
+		</div>
+	</div>
+	<div ng-class="{ 'has-error': loginForm.password.$invalid && loginForm.password.$dirty }" class="form-group">
+		<label for="_password" class="control-label">Password:</label>
+		<div class="input-group"> 
+			<span class="input-group-addon">
+				<span class="glyphicon glyphicon-lock"></span>
+			</span>
+			<input type="password" name="password" id="_password" ng-model="_password" tabindex="2" class="form-control" placeholder="Enter password" required>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button type="submit" class="btn btn-primary" ng-disabled="loginForm.username.$dirty && loginForm.username.$invalid ||
+			loginForm.password.$dirty && loginForm.password.$invalid">Submit</button>
+		<button class="btn btn-warning" ng-click="LoginModalCtrl.cancel()">Cancel</button>
+	</div>
+  </form>
+</div>

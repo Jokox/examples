@@ -1,0 +1,14 @@
+<!-- views/partial-login.html -->
+<div class="modal-header">
+	<h3 class="modal-title">I'm a modal!</h3>
+</div>
+<div class="modal-body">
+  <form ng-submit="LoginModalCtrl.submit(_email, _password)">
+    Email: 		<input type="email" ng-model="_email" /></br>
+    PAssword: 	<input type="password" ng-model="_password" /></br>
+	<div class="modal-footer">
+		<button class="btn btn-primary">Submit</button>
+		<button class="btn btn-warning" ng-click="LoginModalCtrl.cancel()">Cancel</button>
+	</div>
+  </form>
+</div>

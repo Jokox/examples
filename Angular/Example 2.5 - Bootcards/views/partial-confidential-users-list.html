@@ -1,0 +1,33 @@
+<!-- partial-home.html -->
+
+<div>
+    <h1>Users list</h1>
+    <p>List and manage users</span>.</p>    
+	
+	<table class="table table-striped">
+	  <thead><tr>
+		<th>Id</th>
+		<th>Username</th>
+        <th>Password</th>
+        <th>Description</th>
+	  </tr></thead>
+	  <tbody data-ng-repeat="user in usersList">
+        <tr data-ng-if='user != activeUser'>
+		    <td>{{ user.ID }}</td>
+		    <td>{{ user.USERNAME }}</td>
+            <td>{{ user.PASSWORD }}</td>
+            <td>{{ user.DESCRICAO }}</td>
+            <td> <a class='btn btn-primary' data-ng-click='edit(user)'> Edit </a> </td>
+            <td> <a class='btn btn-danger' data-ng-click='delete(user)'> Delete </a> </td>
+	    </tr> 
+        <tr data-ng-if='user == activeUser'> 
+            <td>{{ user.ID }}</td> 
+            <td><input class='form-control' data-ng-model='user.USERNAME' type='text'></td> 
+            <td><input class='form-control' data-ng-model='user.PASSWORD' type='text'></td> 
+            <td><input class='form-control' data-ng-model='user.DESCRICAO' type='text'></td> 
+			<td><a class='btn btn-success' data-ng-click='update(user)'> Update </a></td> 
+			<td><a class='btn btn-primary' data-ng-click='cancel()'> Cancel </a></td> 
+        </tr>
+	  </tbody>
+	</table>
+</div>

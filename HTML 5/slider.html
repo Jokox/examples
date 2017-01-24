@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+#div1 {width:350px;height:70px;padding:10px;border:1px solid #aaaaaa;}
+ 
+ input[type=range]{
+    /* fix for FF unable to apply focus style bug  */
+    border: 1px solid white; 
+
+    /*required for proper track sizing in FF*/
+    width: 300px;
+}
+
+input[type=range]::-moz-range-track {
+    width: 300px;
+    height: 5px;
+    background: #ddd;
+    border: none;
+    border-radius: 3px;
+}
+
+input[type=range]::-moz-range-thumb {
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: goldenrod;
+}
+
+/*hide the outline behind the border*/
+input[type=range]:-moz-focusring{
+    outline: 1px solid white;
+    outline-offset: -1px;
+}
+
+input[type=range]:focus::-moz-range-track {
+    background: #ccc;
+}
+</style>
+
+</head>
+<body>
+
+<p>Drag the W3Schools image into the rectangle:</p>
+
+<div id="jntextslider" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" style="width:85px; margin-left:25px;height: 1px; margin-left: 25px; margin-top: 5px; vertical-align: bottom; position: absolute;border-radius:0;background-color: #acc7da;border-color: #acc7da; color: #acc7da;cursor:pointer;outline:none;"><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 10%; width: 4px; height: 10px; margin-top: -2px; background-color: rgb(58, 102, 150); border: 0px none; border-radius: 0px; color: rgb(58, 102, 150); margin-left: -1px; cursor: pointer; outline: medium none;"></a></div>
+<a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 10%; width: 4px; height: 10px; margin-top: -2px; background-color: rgb(58, 102, 150); border: 0px none; border-radius: 0px; color: rgb(58, 102, 150); margin-left: -1px; cursor: pointer; outline: medium none;"></a>
+</div>
+
+
+</br>Quantity (between 1 and 5):<input type="number" name="quantity" min="1" max="5">
+</br>Select your favorite color:<input type="color" name="favcolor">
+</br><input id="pointsvalue" type="range" name="points" min="0" max="100" oninput="rangevalue.value=value"/>
+</br><input id="rangevalue" name="points" oninput="pointsvalue.value=value"/>
+
+
+<script>
+
+</script>
+
+</body>
+</html>

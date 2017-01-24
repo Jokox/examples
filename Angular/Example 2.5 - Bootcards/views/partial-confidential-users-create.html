@@ -1,0 +1,37 @@
+<!-- partial-home.html -->
+
+<div>
+    <h1>Create a user</h1>
+    <p>This page allows you to create a user</span>.</p>    
+	
+	<form class="form-horizontal">
+	  <div class="form-group">
+		<label class="col-sm-2 control-label">Id:</label>
+		<div class="col-sm-10">
+		<input type="text" data-ng-model="newUser.ID" placeholder="Id">
+		</div>
+	  </div> 
+	  <div class="form-group">
+		<label class="col-sm-2 control-label">Username:</label>
+		<div class="col-sm-10">
+		<input type="text" data-ng-model="newUser.USERNAME" placeholder="Username">
+		</div>
+	  </div>
+	  <div class="form-group">
+		<label class="col-sm-2 control-label">Password:</label>
+		<div class="col-sm-10">
+		<input type="password" data-ng-model="newUser.PASSWORD" placeholder="Password">
+		</div>
+	  </div>
+      <div class="form-group">
+		<label class="col-sm-2 control-label">Description:</label>
+		<div class="col-sm-10">
+		<input type="text" data-ng-model="newUser.DESCRICAO" placeholder="Descricao">
+		</div>
+	  </div>
+	</form>
+	<hr>
+	<button class="btn btn-success" data-ng-click="create()">
+		<span class="glyphicon glyphicon-th"></span>  Create New User
+	</button>
+</div>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="200" height="100">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+</body>
+ <script>
+
+var canvas = document.getElementById("myCanvas");
+ 
+var centerX = parseInt(canvas.getAttribute("width")) / 2;
+var centerY = parseInt(canvas.getAttribute("height")) / 2;
+ 
+var ctx = canvas.getContext("2d");
+
+
+// square
+var rectWidth = 20;
+var rectHeight = 20;
+
+ctx.fillStyle = "#FF0000";
+ctx.fillRect(centerX - (rectWidth / 2), centerY - (rectHeight / 2), rectWidth, rectHeight);
+
+// line
+ctx.moveTo(0,0);
+ctx.lineTo(200,0);
+ctx.lineTo(200,100);
+ctx.lineTo(0,100);
+ctx.lineTo(0,0);
+ctx.stroke();
+
+
+// circle
+ctx.beginPath();
+ctx.arc(centerX, centerY, 40, 0.5 * Math.PI, 1 * Math.PI);
+ctx.arc(centerX, centerY, 40, 1.5 * Math.PI, 2 * Math.PI);
+ctx.closePath();
+ctx.fill();
+
+
+// circle
+ctx.beginPath();
+ctx.arc(centerX, centerY, 40, 1 * Math.PI, 1.5 * Math.PI);
+ctx.arc(centerX, centerY, 40, 0 * Math.PI, 0.5 * Math.PI);
+ctx.closePath();
+ctx.stroke();
+
+
+
+</script> 
+</html>

@@ -1,0 +1,41 @@
+<!-- views/partial-modal-addDog.html -->
+<div class="modal-header">
+	<h3 class="modal-title">Add dog</h3>
+</div>
+<div class="modal-body">
+  <form name="newDogForm" ng-submit="AddDogModalCtrl.submit(_name, _race, _image)" novalidate> <!-- novalidate disables default browser validation -->
+	<div ng-class="{ 'has-error': newDogForm.name.$invalid && newDogForm.name.$dirty }" class="form-group">
+		<label for="_name" class="control-label">Name:</label> 
+		<div class="input-group"> 
+			<span class="input-group-addon">
+				<span class="glyphicon glyphicon-user"></span>
+			</span>
+			<input type="text" name="name" id="_name" ng-model="_name" tabindex="1" class="form-control" placeholder="Enter name" value="" required>
+		</div>
+	</div>
+	<div ng-class="{ 'has-error': newDogForm.race.$invalid && newDogForm.race.$dirty }" class="form-group">
+		<label for="_name" class="control-label">Race:</label> 
+		<div class="input-group"> 
+			<span class="input-group-addon">
+				<span class="fa fa-paw"></span>
+			</span>
+			<input type="text" name="race" id="_race" ng-model="_race" tabindex="1" class="form-control" placeholder="Enter race" value="" required>
+		</div>
+	</div>
+	<div ng-class="{ 'has-error': newDogForm.image.$invalid && newDogForm.image.$dirty }" class="form-group">
+		<label for="_name" class="control-label">image:</label> 
+		<div class="input-group"> 
+			<span class="input-group-addon">
+				<span class="fa fa-picture-o"></span>
+			</span>
+			<input type="text" name="image" id="_image" ng-model="_image" tabindex="1" class="form-control" placeholder="Enter image" value="" >
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button type="submit" class="btn btn-primary" ng-disabled="newDogForm.name.$dirty && newDogForm.name.$invalid ||
+			newDogForm.race.$dirty && newDogForm.race.$invalid ||
+			newDogForm.image.$dirty && newDogForm.image.$invalid">Submit</button>
+		<button class="btn btn-warning" ng-click="AddDogModalCtrl.cancel()">Cancel</button>
+	</div>
+  </form>
+</div>

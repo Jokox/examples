@@ -1,0 +1,13 @@
+<div ng-form name="fieldForm"
+	ng-class="{ 'has-error': fieldForm.currencyFieldName.$invalid}"
+	class="form-group">
+	<label for="currencyFieldName" class="control-label">{{field.field_title}}:</label>
+	<div class="input-group">
+		<input type="number" name="currencyFieldName" id="currencyFieldName"
+			min="{{field.field_min_value}}" max="{{field.field_max_value}}"
+			ng-model="field.field_value" value="{{field.field_value}}"
+			ng-required="field.field_required"
+			ng-disabled="field.field_disabled" class="form-control" /> <span
+			class="input-group-addon">{{field.field_currency}}</span>
+	</div>
+</div>
