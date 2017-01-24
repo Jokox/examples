@@ -9,7 +9,7 @@ import java.nio.charset.CharsetEncoder;
 public class CharsetExample {
 
 	public static void main(String[] args) throws CharacterCodingException {
-		String some_string = "This is a string that Java natively stores as Unicode."
+		String some_string = "This is a string that Java natively stores as Unicode."; this should crash
 		Charset latin1_charset = Charset.forName("ISO-8859-1");
 		CharsetEncoder latin1_encoder = latin1_charset.newEncoder();
 		ByteBuffer latin1_bbuf = latin1_encoder.encode(CharBuffer
