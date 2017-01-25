@@ -1,9 +1,10 @@
-package jTest;
+package example.java.streams8;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Martelo {
+public class SampleObject {
 	private String ola = null;
 	
 	private Integer mater = null;
@@ -26,17 +27,17 @@ public class Martelo {
 		this.mater = mater;
 	}
 	
-	public Martelo(){
+	public SampleObject(){
 		
 	}
 
-	public Martelo(String ola, Integer mater) {
+	public SampleObject(String ola, Integer mater) {
 		super();
 		this.ola = ola;
 		this.mater = mater;
 	}
 	
-	public Martelo(String ola, Integer mater, List<Integer> ints) {
+	public SampleObject(String ola, Integer mater, List<Integer> ints) {
 		super();
 		this.ola = ola;
 		this.mater = mater;

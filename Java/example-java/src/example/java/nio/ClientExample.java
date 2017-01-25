@@ -1,4 +1,5 @@
-package jTest;
+package example.java.nio;
+
 
 import java.io.IOException;
 import java.net.InetSocketAddress;

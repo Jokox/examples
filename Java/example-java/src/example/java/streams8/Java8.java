@@ -1,4 +1,5 @@
-package jTest;
+package example.java.streams8;
+
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -20,16 +21,16 @@ public class Java8 {
 
 		System.out.println(list.stream().allMatch(Java8::isTretas));
 
-		List<Martelo> martelos = Arrays.asList(
-				new Martelo("ola1", 1, Arrays.asList(4 , 7)),
-				new Martelo("ola2", 2), 
-				new Martelo("ola1", 3, Arrays.asList(1 , 2)), 
-				new Martelo("ola1", 4)
+		List<SampleObject> martelos = Arrays.asList(
+				new SampleObject("ola1", 1, Arrays.asList(4 , 7)),
+				new SampleObject("ola2", 2), 
+				new SampleObject("ola1", 3, Arrays.asList(1 , 2)), 
+				new SampleObject("ola1", 4)
 		);
 
 		martelos.stream()
 				.peek(item -> System.out.println("Initial item: " + item))
-				.map(Martelo::getOla)
+				.map(SampleObject::getOla)
 				.peek(item -> System.out.println("Transformed item: " + item))
 				.collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
 				.forEach((groupKey, count) -> System.out.println(String.format("Group %s has %d elements", groupKey, count)));

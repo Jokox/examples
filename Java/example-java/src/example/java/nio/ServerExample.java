@@ -1,4 +1,5 @@
-package jTest;
+package example.java.nio;
+
 
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
