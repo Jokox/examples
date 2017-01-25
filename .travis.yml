@@ -1,6 +1,6 @@
 language: java
 sudo: false # faster builds
-script: cd Java/example-java && mvn install && mvn cobertura:cobertura
+script: cd Java/example-java && mvn install
 
 notifications:
   email: false
