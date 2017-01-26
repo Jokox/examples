@@ -105,9 +105,40 @@ namespace Test
             return (int) Math.Ceiling((double)(Y - X) / (double)D);
         }
 
+        /// <summary>
+        /// https://codility.com/programmers/lessons/3-time_complexity/perm_missing_elem/
+        /// </summary>
+        /// <param name="A"></param>
+        /// <returns></returns>
+        public static int permMissingElem(int[] A)
+        {
+            long size = A.Length;
+
+            if (size == 0)
+            {
+                return 1;
+            }
+            else if (size == 1 && A[0] == 1)
+            {
+                return 2;
+            }
+
+            long total = (size * (size + 1)) / 2;
+
+            var i = 0;
+            for (; i < size; i++)
+            {
+                if (A[i] <= size)
+                {
+                    total -= ((long) A[i]);
+                }
+            }
+            return (total == 0) ? i + 1 : (int) total;
+        }
+
         static void Main(string[] args)
         {
-            Console.WriteLine(frogJmp(10, 85, 30));
+            Console.WriteLine(permMissingElem(new int[] { 1, 2, 6, 3, 4 }));
             Console.ReadKey();
         }
     }
