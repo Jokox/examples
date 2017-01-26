@@ -13,7 +13,7 @@ namespace Test
         /// </summary>
         /// <param name="N"></param>
         /// <returns></returns>
-        public static int BinaryGap_1(int N)
+        public static int binaryGap_1(int N)
         {
             string binary = Convert.ToString(N, 2);
 
@@ -31,7 +31,7 @@ namespace Test
         /// </summary>
         /// <param name="N"></param>
         /// <returns></returns>
-        public static int BinaryGap_2(int N)
+        public static int binaryGap_2(int N)
         {
             string binary = Convert.ToString(N, 2);
 
@@ -67,7 +67,7 @@ namespace Test
         /// </summary>
         /// <param name="A"></param>
         /// <returns></returns>
-        public static int OddOccurrencesInArray(int[] A)
+        public static int oddOccurrencesInArray(int[] A)
         {
             return A.GroupBy(x => x).First(group => group.Count() % 2 != 0).Key;
         }
@@ -78,7 +78,7 @@ namespace Test
         /// <param name="A"></param>
         /// <param name="K"></param>
         /// <returns></returns>
-        public static int[] CyclicRotation(int[] A, int K)
+        public static int[] cyclicRotation(int[] A, int K)
         {
             if (A == null || A.Length <= 1) return A;
 
@@ -95,7 +95,7 @@ namespace Test
 
         static void Main(string[] args)
         {
-            Console.WriteLine(String.Join(",", CyclicRotation(new int[] { 42, 1, 3, 5 }, 2)));
+            Console.WriteLine(String.Join(",", cyclicRotation(new int[] { 42, 1, 3, 5 }, 2)));
             Console.ReadKey();
         }
     }
