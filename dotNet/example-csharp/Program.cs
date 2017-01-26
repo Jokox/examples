@@ -93,9 +93,21 @@ namespace Test
             return list.ToArray();
         }
 
+        /// <summary>
+        /// https://codility.com/programmers/lessons/3-time_complexity/frog_jmp/
+        /// </summary>
+        /// <param name="X"></param>
+        /// <param name="Y"></param>
+        /// <param name="D"></param>
+        /// <returns></returns>
+        public static int frogJmp(int X, int Y, int D)
+        {
+            return (int) Math.Ceiling((double)(Y - X) / (double)D);
+        }
+
         static void Main(string[] args)
         {
-            Console.WriteLine(String.Join(",", cyclicRotation(new int[] { 42, 1, 3, 5 }, 2)));
+            Console.WriteLine(frogJmp(10, 85, 30));
             Console.ReadKey();
         }
     }
