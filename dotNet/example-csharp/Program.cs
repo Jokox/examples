@@ -110,7 +110,7 @@ namespace Test
         /// </summary>
         /// <param name="A"></param>
         /// <returns></returns>
-        public static int permMissingElem(int[] A)
+        public static int permMissingElem_1(int[] A)
         {
             long size = A.Length;
 
@@ -136,9 +136,21 @@ namespace Test
             return (total == 0) ? i + 1 : (int) total;
         }
 
+        /// <summary>
+        /// https://codility.com/programmers/lessons/3-time_complexity/perm_missing_elem/
+        /// </summary>
+        /// <param name="A"></param>
+        /// <returns></returns>
+        public static int permMissingElem_2(int[] A)
+        {
+            if (A.Length == 0) return 1;
+
+            return Enumerable.Range(1, A.Length + 1).Except(A.OrderBy(x => x)).First();
+        }
+
         static void Main(string[] args)
         {
-            Console.WriteLine(permMissingElem(new int[] { 1, 2, 6, 3, 4 }));
+            Console.WriteLine(permMissingElem_2(new int[] { 1, 2, 6, 3, 4 }));
             Console.ReadKey();
         }
     }
