@@ -148,9 +148,34 @@ namespace Test
             return Enumerable.Range(1, A.Length + 1).Except(A.OrderBy(x => x)).First();
         }
 
+        /// <summary>
+        /// https://codility.com/programmers/lessons/3-time_complexity/tape_equilibrium/
+        /// </summary>
+        /// <param name="A"></param>
+        /// <returns></returns>
+        public static int tapeEquilibrium_1(int[] A)
+        {
+            var minDiff = int.MaxValue;
+            var left = 0;
+            var right = A.Sum();
+
+            for (var i = 1; i < A.Length; i++)
+            {
+                left += A[i - 1];
+                right -= A[i - 1];
+
+                var diff = Math.Abs(right - left);
+
+                if (diff < minDiff) minDiff = diff;
+            }
+
+            return minDiff;
+        }
+
+
         static void Main(string[] args)
         {
-            Console.WriteLine(permMissingElem_2(new int[] { 1, 2, 6, 3, 4 }));
+            Console.WriteLine(tapeEquilibrium_1(new int[] { 5, 6, 2, 4, 1 }));
             Console.ReadKey();
         }
     }
