@@ -172,10 +172,26 @@ namespace Test
             return minDiff;
         }
 
+        /// <summary>
+        /// https://codility.com/programmers/lessons/4-counting_elements/missing_integer/
+        /// </summary>
+        /// <param name="A"></param>
+        /// <returns></returns>
+        public static int missingInteger(int[] A)
+        {
+            var list = A.Where(x => x > 0);
+
+            if (list.Count() == 0) return 1;
+
+            var missing = Enumerable.Range(1, list.Max()).Except(list);
+
+            return missing.DefaultIfEmpty(list.Max() + 1).First();
+        }
+
 
         static void Main(string[] args)
         {
-            Console.WriteLine(tapeEquilibrium_1(new int[] { 5, 6, 2, 4, 1 }));
+            Console.WriteLine(missingInteger(new int[] { 1, 2, 4 }));
             Console.ReadKey();
         }
     }
