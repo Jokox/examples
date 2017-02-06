@@ -22,7 +22,7 @@ public class ServerExample {
 		InetSocketAddress crunchifyAddr = new InetSocketAddress("localhost",
 				1111);
 
-		// Binds the channel's socket to a local address and configures the
+		// Binds the channel's socket to a local address and configures the 
 		// socket to listen for connections
 		crunchifySocket.bind(crunchifyAddr);
 
