@@ -17,7 +17,7 @@ namespace Test
         {
             string binary = Convert.ToString(N, 2);
 
-            Console.WriteLine("Binary : " + binary);
+            Console.WriteLine("Binary: " + binary);
 
             if (binary.Count(x => x == '1') <= 1) return 0;
 
