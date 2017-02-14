@@ -187,6 +187,18 @@ namespace Test
 
             return missing.DefaultIfEmpty(list.Max() + 1).First();
         }
+        
+        /// <summary>
+        /// https://codility.com/programmers/lessons/6-sorting/distinct/
+        /// </summary>
+        /// <param name="A"></param>
+        /// <returns></returns>
+        public static int distinct(int[] A)
+        {
+            if (A == null) return 0;
+
+            return A.Distinct().Count();
+        }
 
 
         static void Main(string[] args)
