@@ -233,6 +233,30 @@ namespace Test
         }
         
         /// <summary>
+        /// https://codility.com/programmers/lessons/5-prefix_sums/count_div/
+        /// </summary>
+        /// <param name="A"></param>
+        /// <param name="B"></param>
+        /// <param name="K"></param>
+        /// <returns></returns>
+        public static int countDiv_3(int A, int B, int K)
+        {
+            if (K < 1 || K > 2000000000) return 0; // A and B are integers within the range [0..2,000,000,000];
+
+            if (A < 0 || A > 2000000000) return 0; // K is an integer within the range [1..2,000,000,000]
+
+            if (A > B) return 0; // A ≤ B
+
+            if (A == B) return (A % K == 0) ? 1 : 0;
+
+            var divs = (B / K) - (A / K);
+
+            if (A % K == 0) divs++;
+
+            return divs;
+        }
+        
+        /// <summary>
         /// https://codility.com/programmers/lessons/6-sorting/distinct/
         /// </summary>
         /// <param name="A"></param>
