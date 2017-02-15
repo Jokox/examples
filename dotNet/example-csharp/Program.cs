@@ -189,6 +189,50 @@ namespace Test
         }
         
         /// <summary>
+        /// https://codility.com/programmers/lessons/5-prefix_sums/count_div/
+        /// 0% perfomance
+        /// </summary>
+        /// <param name="A"></param>
+        /// <param name="B"></param>
+        /// <param name="K"></param>
+        /// <returns></returns>
+        public static int countDiv_1(int A, int B, int K)
+        {
+            if (K < 1 || K > 2000000000) return 0; // A and B are integers within the range [0..2,000,000,000];
+
+            if (A < 0 || A > 2000000000) return 0; // K is an integer within the range [1..2,000,000,000]
+
+            if (A > B) return 0; // A ≤ B
+
+            return Enumerable.Range(A, (B - A) + 1).Count(x => x % K == 0);
+        }
+
+        /// <summary>
+        /// https://codility.com/programmers/lessons/5-prefix_sums/count_div/
+        /// /// 0% perfomance
+        /// </summary>
+        /// <param name="A"></param>
+        /// <param name="B"></param>
+        /// <param name="K"></param>
+        /// <returns></returns>
+        public static int countDiv_2(int A, int B, int K)
+        {
+            if (K < 1 || K > 2000000000) return 0; // A and B are integers within the range [0..2,000,000,000];
+
+            if (A < 0 || A > 2000000000) return 0; // K is an integer within the range [1..2,000,000,000]
+
+            if (A > B) return 0; // A ≤ B
+
+            var count = 0;
+            for (var i = A; i <= B; i++)
+            {
+                if (i % K == 0) count++;
+            }
+
+            return count;
+        }
+        
+        /// <summary>
         /// https://codility.com/programmers/lessons/6-sorting/distinct/
         /// </summary>
         /// <param name="A"></param>
