@@ -189,6 +189,27 @@ namespace Test
         }
         
         /// <summary>
+        /// https://codility.com/programmers/lessons/4-counting_elements/perm_check/
+        /// </summary>
+        /// <param name="A"></param>
+        /// <returns></returns>
+        public static int permCheck(int[] A)
+        {
+            if (A.Count() < 1 || A.Count() > 100000) return 0; // N is an integer within the range [1..100,000];
+
+            var arr = A.OrderBy(x => x);
+            var size = arr.Count();
+
+            var firstElem = arr.ElementAt(0);
+
+            if (firstElem != 1) return 0;
+
+            if (arr.Distinct().Count() != size) return 0;
+
+            return ((arr.ElementAt(size - 1) - firstElem + 1) == size) ? 1 : 0; 
+        }
+        
+        /// <summary>
         /// https://codility.com/programmers/lessons/5-prefix_sums/count_div/
         /// 0% perfomance
         /// </summary>
