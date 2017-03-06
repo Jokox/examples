@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -207,6 +208,53 @@ namespace Test
             if (arr.Distinct().Count() != size) return 0;
 
             return ((arr.ElementAt(size - 1) - firstElem + 1) == size) ? 1 : 0; 
+        }
+        
+         /// <summary>
+        /// https://codility.com/programmers/lessons/4-counting_elements/frog_river_one/
+        /// 
+        /// 0% perfomance
+        /// </summary>
+        /// <param name="X"></param>
+        /// <param name="A"></param>
+        /// <returns></returns>
+        public static int frogRiverOne_1(int X, int[] A)
+        {
+            if (X < 1 || X > 100000) return -1; // N and X are integers within the range [1..100,000];
+
+            var arrBit = new BitArray(X);
+            for (var i = 0; i < A.Count(); i++)
+            {
+                arrBit.Set(A[i] - 1, true);
+
+                if (arrBit.Cast<bool>().All(x => x)) return i;
+            }
+
+            return -1;
+        }
+
+        /// <summary>
+        /// https://codility.com/programmers/lessons/4-counting_elements/frog_river_one/
+        /// 
+        /// </summary>
+        /// <param name="X"></param>
+        /// <param name="A"></param>
+        /// <returns></returns>
+        public static int frogRiverOne_2(int X, int[] A)
+        {
+            if (X < 1 || X > 100000) return -1; // N and X are integers within the range [1..100,000];
+
+            Console.WriteLine((byte)X);
+
+            var finalPos = 0;
+            for (var i = 0; i < A.Count(); i++)
+            {
+                finalPos |= 1 << (A[i] - 1);
+
+                Console.WriteLine(Convert.ToString(finalPos, 2) + " " + (byte) finalPos);
+            }
+
+            return -1;
         }
         
         /// <summary>
