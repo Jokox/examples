@@ -235,7 +235,6 @@ namespace Test
 
         /// <summary>
         /// https://codility.com/programmers/lessons/4-counting_elements/frog_river_one/
-        /// 
         /// </summary>
         /// <param name="X"></param>
         /// <param name="A"></param>
@@ -244,14 +243,14 @@ namespace Test
         {
             if (X < 1 || X > 100000) return -1; // N and X are integers within the range [1..100,000];
 
-            Console.WriteLine((byte)X);
+            Dictionary<int, bool> map = new Dictionary<int, bool>();
 
-            var finalPos = 0;
             for (var i = 0; i < A.Count(); i++)
             {
-                finalPos |= 1 << (A[i] - 1);
+                var value = A[i];
+                if (1 <= value && value <= X && !map.ContainsKey(value)) map.Add(value, true);
 
-                Console.WriteLine(Convert.ToString(finalPos, 2) + " " + (byte) finalPos);
+                if (map.Count == X) return i;
             }
 
             return -1;
