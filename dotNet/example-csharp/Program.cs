@@ -325,6 +325,29 @@ namespace Test
         }
         
         /// <summary>
+        /// https://codility.com/programmers/lessons/5-prefix_sums/passing_cars/
+        /// 0% performance
+        /// </summary>
+        /// <param name="X"></param>
+        /// <param name="A"></param>
+        /// <returns></returns>
+        public static int passingCars(int[] A)
+        {
+            if (A.Length < 1 || A.Length > 100000) return -1; // N and X are integers within the range [1..100,000];
+
+            var arr = A.Skip(A.ToList().FindIndex(x => x == 0)); // slow
+            var ones = arr.Count(x => x == 1);
+            var count = 0;
+            for (var i = 0; i < arr.Count(); i++)
+            {
+                if (arr.ElementAt(i) == 0) count += ones;
+                else ones--;
+            }
+
+            return count;
+        }
+        
+        /// <summary>
         /// https://codility.com/programmers/lessons/6-sorting/distinct/
         /// </summary>
         /// <param name="A"></param>
