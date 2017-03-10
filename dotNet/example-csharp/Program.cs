@@ -335,13 +335,17 @@ namespace Test
         {
             if (A.Length < 1 || A.Length > 100000) return -1; // N and X are integers within the range [1..100,000];
 
-            var arr = A.Skip(A.ToList().FindIndex(x => x == 0)); // slow
-            var ones = arr.Count(x => x == 1);
+            var countOnesPassed = 0;
             var count = 0;
-            for (var i = 0; i < arr.Count(); i++)
+            for (var i = A.Length - 1; i >= 0; i--)
             {
-                if (arr.ElementAt(i) == 0) count += ones;
-                else ones--;
+                var elem = A[i];
+
+                if (elem == 0) count += countOnesPassed;
+
+                if (elem == 1) countOnesPassed++;
+
+                if (count > 1000000000) return -1;
             }
 
             return count;
