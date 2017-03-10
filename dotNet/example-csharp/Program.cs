@@ -326,7 +326,6 @@ namespace Test
         
         /// <summary>
         /// https://codility.com/programmers/lessons/5-prefix_sums/passing_cars/
-        /// 0% performance
         /// </summary>
         /// <param name="X"></param>
         /// <param name="A"></param>
