@@ -351,6 +351,61 @@ namespace Test
         }
         
         /// <summary>
+        /// https://codility.com/programmers/lessons/5-prefix_sums/genomic_range_query/
+        /// 0% perfomance
+        /// </summary>
+        /// <param name="X"></param>
+        /// <param name="A"></param>
+        /// <returns></returns>
+        public static int[] genomicRangeQuery_1(string S, int[] P, int[] Q)
+        {
+            if (S.Length < 1 || S.Length > 100000) return null; // S length is within the range [1..100,000];
+
+            if (P.Length != Q.Length) return null; // Query params length must match
+
+            var queriesNumber = P.Length;
+
+            return Enumerable.Range(0, queriesNumber).Select(x => {
+                var queryStr = S.Substring(P[x], Q[x] - P[x] + 1);
+
+                if (queryStr.Contains('A')) return 1;
+                if (queryStr.Contains('C')) return 2;
+                if (queryStr.Contains('G')) return 3;
+                if (queryStr.Contains('T')) return 4;
+
+                return 0;
+            }).ToArray();
+        }
+
+        /// <summary>
+        /// https://codility.com/programmers/lessons/5-prefix_sums/genomic_range_query/
+        /// 0% perfomance
+        /// </summary>
+        /// <param name="X"></param>
+        /// <param name="A"></param>
+        /// <returns></returns>
+        public static int[] genomicRangeQuery_2(string S, int[] P, int[] Q)
+        {
+            if (S.Length < 1 || S.Length > 100000) return null; // S length is within the range [1..100,000];
+
+            if (P.Length != Q.Length) return null; // Query params length must match
+
+            var queriesNumber = P.Length;
+            var queriesResult = new int[queriesNumber];
+            for (var i = 0; i < queriesNumber; i++)
+            {
+                var queryStr = S.Substring(P[i], Q[i] - P[i] + 1);
+
+                if (queryStr.Contains('A')) { queriesResult[i] = 1; continue; }
+                if (queryStr.Contains('C')) { queriesResult[i] = 2; continue; }
+                if (queryStr.Contains('G')) { queriesResult[i] = 3; continue; }
+                if (queryStr.Contains('T')) { queriesResult[i] = 4; continue; }
+            }
+
+            return queriesResult;
+        }
+        
+        /// <summary>
         /// https://codility.com/programmers/lessons/6-sorting/distinct/
         /// </summary>
         /// <param name="A"></param>
