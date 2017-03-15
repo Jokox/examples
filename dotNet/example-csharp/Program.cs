@@ -417,7 +417,27 @@ namespace Test
             return A.Distinct().Count();
         }
 
+        /// <summary>
+        /// https://codility.com/programmers/lessons/8-leader/dominator/
+        /// </summary>
+        /// <param name="A"></param>
+        /// <returns></returns>
+        public static int dominator(int[] A)
+        {
+            if (A.Length == 0) return -1; // A mustn't be empty
 
+            var groups = A.GroupBy(x => x);
+            var maxCount = groups.Max(x => x.Count());
+
+            if (groups.Count(x => x.Count() == maxCount) > 1) return -1; // Dominator must occur more then half array size
+
+            if(maxCount <= A.Length / 2d) return -1;
+
+            var dominator = groups.First(x => x.Count() == maxCount).Key;
+
+            return A.ToList().IndexOf(dominator);
+        }
+        
         static void Main(string[] args)
         {
             Console.WriteLine(missingInteger(new int[] { 1, 2, 4 }));
